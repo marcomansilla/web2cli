@@ -27,13 +27,12 @@
      data() {
 	 return {
 	     people:null,
-	     base:window.location.pathname
 	 }
      },
 
      methods:{
 	 fetchPeople(){
-	     axios.get(`${this.base}/services/api/person`)
+	     axios.get(`/services/api/person`)
 		  .then(res=>this.people=res.data.rows);
 	 }
      },
