@@ -27,13 +27,14 @@
      data() {
 	 return {
 	     people:null,
+	     base:window.location.pathname
 	 }
      },
 
      methods:{
 	 fetchPeople(){
-	     axios.get('/cli/services/api/person')
-		  .then(res=>this.people=res.data.rows)
+	     axios.get(`${this.base}/services/api/person`)
+		  .then(res=>this.people=res.data.rows);
 	 }
      },
      mounted(){
